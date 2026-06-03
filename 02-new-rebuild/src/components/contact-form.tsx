@@ -7,7 +7,6 @@ import { contactSchema, type ContactFormInput } from "@/lib/contact-schema";
 import { productCategories } from "@/lib/content";
 
 type ApiResponse = { ok: boolean; message: string; errors?: Partial<Record<keyof ContactFormInput, string[]>> };
-
 type FormState = ContactFormInput;
 
 const emptyForm: FormState = { name: "", companyName: "", email: "", phone: "", country: "", interest: "", message: "", website: "" };
@@ -48,12 +47,17 @@ export function ContactForm() {
     }
   }
 
-  const fieldClass = "mt-2 w-full rounded-2xl border border-white/10 bg-white/[.06] px-4 py-3 text-white outline-none transition placeholder:text-mist/60 focus:border-copper focus:ring-2 focus:ring-copper/30";
-  const labelClass = "text-sm font-semibold text-platinum";
-  const errorText = (name: keyof ContactFormInput) => errors?.[name]?.[0] ? <span className="mt-1 block text-sm text-amberline">{errors[name]?.[0]}</span> : null;
+  const fieldClass = "mt-2 w-full rounded-xl border border-line bg-white px-4 py-3 text-graphite outline-none transition placeholder:text-smoke/55 focus:border-brass focus:ring-4 focus:ring-brass/15";
+  const labelClass = "text-sm font-bold text-graphite";
+  const errorText = (name: keyof ContactFormInput) => errors?.[name]?.[0] ? <span className="mt-1 block text-sm text-copper">{errors[name]?.[0]}</span> : null;
 
   return (
-    <form onSubmit={onSubmit} className="rounded-[2rem] border border-white/10 bg-white/[.045] p-6 shadow-premium backdrop-blur md:p-8" noValidate>
+    <form onSubmit={onSubmit} className="rounded-[2rem] border border-line bg-porcelain p-6 shadow-editorial md:p-8" noValidate>
+      <div className="mb-7 border-b border-line pb-5">
+        <p className="text-xs font-bold uppercase tracking-[0.28em] text-copper">RFQ / Business Inquiry</p>
+        <h2 className="mt-3 font-display text-3xl font-semibold text-graphite">Share your component requirement.</h2>
+        <p className="mt-3 leading-7 text-smoke">Include drawings, material, quantity, tolerances, destination country and expected timeline where available.</p>
+      </div>
       <div className="hidden" aria-hidden="true"><label>Website<input tabIndex={-1} autoComplete="off" value={form.website ?? ""} onChange={(event) => update("website", event.target.value)} /></label></div>
       <div className="grid gap-5 md:grid-cols-2">
         <label className={labelClass}>Name *<input className={fieldClass} value={form.name} onChange={(event) => update("name", event.target.value)} placeholder="Your full name" />{errorText("name")}</label>
@@ -61,14 +65,14 @@ export function ContactForm() {
         <label className={labelClass}>Email *<input className={fieldClass} value={form.email} onChange={(event) => update("email", event.target.value)} placeholder="name@company.com" type="email" />{errorText("email")}</label>
         <label className={labelClass}>Phone *<input className={fieldClass} value={form.phone} onChange={(event) => update("phone", event.target.value)} placeholder="Country code + number" />{errorText("phone")}</label>
         <label className={labelClass}>Country *<input className={fieldClass} value={form.country} onChange={(event) => update("country", event.target.value)} placeholder="Country" />{errorText("country")}</label>
-        <label className={labelClass}>Product / service interest *<select className={fieldClass} value={form.interest} onChange={(event) => update("interest", event.target.value)}><option value="">Select interest</option>{options.map((option)=><option className="bg-graphite" value={option} key={option}>{option}</option>)}<option className="bg-graphite" value="Custom precision component inquiry">Custom precision component inquiry</option></select>{errorText("interest")}</label>
+        <label className={labelClass}>Product / service interest *<select className={fieldClass} value={form.interest} onChange={(event) => update("interest", event.target.value)}><option value="">Select interest</option>{options.map((option)=><option value={option} key={option}>{option}</option>)}<option value="Custom precision component inquiry">Custom precision component inquiry</option></select>{errorText("interest")}</label>
       </div>
-      <label className={`${labelClass} mt-5 block`}>Message *<textarea className={`${fieldClass} min-h-36`} value={form.message} onChange={(event) => update("message", event.target.value)} placeholder="Share drawings, material, quantity, tolerance, export destination, timeline or questions." />{errorText("message")}</label>
-      {status && <div className={`mt-5 rounded-2xl border p-4 text-sm ${status.ok ? "border-emerald-400/30 bg-emerald-400/10 text-emerald-100" : "border-amberline/40 bg-amberline/10 text-amberline"}`}>{status.message}</div>}
-      <button type="submit" disabled={isSubmitting} className="mt-6 inline-flex items-center justify-center rounded-full bg-copper px-7 py-3 font-semibold text-white transition hover:bg-amberline hover:text-graphite disabled:cursor-not-allowed disabled:opacity-70">
+      <label className={`${labelClass} mt-5 block`}>Message *<textarea className={`${fieldClass} min-h-40`} value={form.message} onChange={(event) => update("message", event.target.value)} placeholder="Example: part description, material, drawing availability, quantity, finish, inspection requirement and delivery destination." />{errorText("message")}</label>
+      {status && <div className={`mt-5 rounded-2xl border p-4 text-sm ${status.ok ? "border-emerald-600/25 bg-emerald-50 text-emerald-800" : "border-copper/40 bg-orange-50 text-copper"}`}>{status.message}</div>}
+      <button type="submit" disabled={isSubmitting} className="mt-6 inline-flex items-center justify-center rounded-full bg-graphite px-7 py-3 font-semibold text-white transition hover:bg-slateblue disabled:cursor-not-allowed disabled:opacity-70">
         {isSubmitting ? <Loader2 className="mr-2 animate-spin" size={18}/> : <Send className="mr-2" size={18}/>} Submit inquiry
       </button>
-      <p className="mt-4 text-xs leading-5 text-mist">Submissions are validated on the server. No secrets are stored in this frontend. Configure SMTP and optional database persistence using environment variables.</p>
+      <p className="mt-4 text-xs leading-5 text-smoke">Your inquiry is reviewed by the Royal Engitech team for the appropriate product, process and export requirement.</p>
     </form>
   );
 }

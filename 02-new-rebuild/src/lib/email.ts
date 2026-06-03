@@ -35,9 +35,9 @@ export async function sendLeadNotification(lead: ContactFormInput) {
     to: process.env.CONTACT_TO_EMAIL,
     from: process.env.CONTACT_FROM_EMAIL,
     replyTo: lead.email,
-    subject: `New Royal Engitech inquiry from ${lead.companyName}`,
+    subject: `Royal Engitech product inquiry from ${lead.companyName}`,
     text: rows.map(([label, value]) => `${label}: ${value}`).join("\n"),
-    html: `<h2>New Royal Engitech website inquiry</h2><table>${rows
+    html: `<h2>New Royal Engitech business inquiry</h2><table>${rows
       .map(([label, value]) => `<tr><td><strong>${escapeHtml(label)}</strong></td><td>${escapeHtml(value).replace(/\n/g, "<br />")}</td></tr>`)
       .join("")}</table>`,
   });

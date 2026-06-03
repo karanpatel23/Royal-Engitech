@@ -14,7 +14,7 @@ export function pageMetadata({ title, description, path = "/" }: { title: string
       url,
       siteName: "Royal Engitech",
       type: "website",
-      images: [{ url: "/images/precision-machining.jpg", width: 1200, height: 630, alt: "Royal Engitech precision engineering facility" }],
+      images: [{ url: "/images/hero-cnc-vmc.jpg", width: 1200, height: 630, alt: "Royal Engitech CNC machining and precision component capability" }],
     },
     twitter: { card: "summary_large_image", title, description },
   };
