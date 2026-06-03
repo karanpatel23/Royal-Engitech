@@ -5,22 +5,28 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        graphite: "#0B1118",
-        steel: "#172231",
-        platinum: "#E8EDF3",
-        copper: "#C97932",
-        amberline: "#F7B267",
-        mist: "#A7B3C4",
+        paper: "#F7F4EE",
+        porcelain: "#FFFCF7",
+        graphite: "#16202B",
+        steel: "#E5EAF0",
+        slateblue: "#3F5F78",
+        brass: "#B58345",
+        copper: "#A96D3A",
+        smoke: "#66717D",
+        line: "#D8D0C5",
+        ink: "#101820",
       },
       fontFamily: {
         sans: ["Inter", "Manrope", "system-ui", "sans-serif"],
         display: ["Manrope", "Inter", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        premium: "0 24px 80px rgba(0,0,0,.35)",
+        editorial: "0 28px 70px rgba(22,32,43,.14)",
+        metal: "0 1px 0 rgba(255,255,255,.75) inset, 0 24px 50px rgba(63,95,120,.16)",
       },
       backgroundImage: {
-        "radial-grid": "radial-gradient(circle at 20% 20%, rgba(201,121,50,.24), transparent 28%), radial-gradient(circle at 80% 0%, rgba(77,117,161,.22), transparent 24%)",
+        blueprint: "linear-gradient(rgba(63,95,120,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(63,95,120,.08) 1px, transparent 1px)",
+        brushed: "linear-gradient(135deg, rgba(255,255,255,.86), rgba(229,234,240,.5) 42%, rgba(181,131,69,.10))",
       },
     },
   },
