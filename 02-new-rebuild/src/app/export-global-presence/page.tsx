@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { GlobeNetworkVisual } from "@/components/industrial-3d";
 import { Button, PageHero, Panel, Section } from "@/components/ui";
 import { company, exportReadiness, rfqSteps } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
@@ -9,7 +9,7 @@ export const metadata = pageMetadata({ title: "Export & Global Presence", path: 
 export default function ExportPage(){
   return (
     <>
-      <PageHero eyebrow="Export / Global Presence" title="A dependable Indian manufacturing partner for international buyers." intro="From Ahmedabad, Gujarat, Royal Engitech supports component inquiries that require drawing review, documentation readiness, careful packaging and reliable communication." image={<Image src="/images/export-engineering.jpg" alt="Inspection and export documentation readiness" width={560} height={300} className="rounded-[2rem] border border-line bg-white p-2 shadow-editorial" />} />
+      <PageHero eyebrow="Export / Global Presence" title="A dependable Indian manufacturing partner for international buyers." intro="From Ahmedabad, Gujarat, Royal Engitech supports component inquiries that require drawing review, documentation readiness, careful packaging and reliable communication." image={<GlobeNetworkVisual />} />
 
       <Section title="Why international buyers can evaluate Royal Engitech with confidence" intro="The company profile is built around practical sourcing expectations: technical review, process discipline, supplier responsiveness and shipment preparation.">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">{exportReadiness.map((item)=><Panel key={item.title}><item.icon className="mb-4 text-copper" /><h2 className="text-xl font-semibold text-graphite">{item.title}</h2><p className="mt-3 leading-7 text-smoke">{item.text}</p></Panel>)}</div>
@@ -23,7 +23,7 @@ export default function ExportPage(){
 
       <Section title="Documentation and communication readiness" intro="Buyers can request product information, certification references, packaging requirements and dispatch communication through the inquiry flow.">
         <div className="grid gap-8 lg:grid-cols-[1.1fr_.9fr] lg:items-center">
-          <Image src="/images/fabrication-machinery.jpg" alt="Industrial equipment and manufacturing readiness" width={900} height={520} className="rounded-[2rem] border border-line bg-white p-2 shadow-editorial" />
+          <GlobeNetworkVisual />
           <Panel><h2 className="text-3xl font-semibold text-graphite">Located in Ahmedabad, India</h2><p className="mt-4 leading-8 text-smoke">{company.address}</p><p className="mt-4 leading-8 text-smoke">The contact flow captures country, product interest and technical message so export conversations can begin with the right context.</p><Button href="/contact" className="mt-7">Start export inquiry</Button></Panel>
         </div>
       </Section>

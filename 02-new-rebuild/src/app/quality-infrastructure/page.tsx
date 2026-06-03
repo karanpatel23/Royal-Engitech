@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { Download } from "lucide-react";
+import { FloatingMetalRings, MeasurementVisual } from "@/components/industrial-3d";
 import { Button, PageHero, Panel, Section } from "@/components/ui";
-import { capabilities, qualityPoints, qualityProcess, workshopMachines } from "@/lib/content";
+import { qualityPoints, qualityProcess, workshopMachines } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({ title: "Quality & Infrastructure", path: "/quality-infrastructure", description: "Review Royal Engitech infrastructure, workshop, fabrication, foundry and ISO quality focus." });
@@ -9,9 +10,10 @@ export const metadata = pageMetadata({ title: "Quality & Infrastructure", path: 
 export default function QualityInfrastructurePage(){
   return (
     <>
-      <PageHero eyebrow="Quality / Infrastructure" title="Manufacturing depth supported by quality discipline." intro="Royal Engitech combines workshop, foundry, fabrication, CAD/CAM, inspection and dispatch practices to support precision engineered components." image={<Image src="/images/quality-measurement-systems.jpg" alt="Quality measurement equipment used for precision inspection" width={560} height={300} className="rounded-[2rem] border border-line bg-white p-2 shadow-editorial" />} />
+      <PageHero eyebrow="Quality / Infrastructure" title="Manufacturing depth supported by quality discipline." intro="Royal Engitech combines workshop, foundry, fabrication, CAD/CAM, inspection and dispatch practices to support precision engineered components." image={<MeasurementVisual />} />
 
       <Section title="Quality assurance sequence" intro="Quality is treated as a process that begins with drawing review and continues through material planning, manufacturing, inspection, packaging and dispatch.">
+        <FloatingMetalRings className="mb-8" />
         <div className="grid gap-5 lg:grid-cols-5">
           {qualityProcess.map((step, index)=>(
             <Panel key={step.title} className="relative overflow-hidden">
