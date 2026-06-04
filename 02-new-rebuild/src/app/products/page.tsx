@@ -1,6 +1,5 @@
-import Image from "next/image";
 import { Download, FileText } from "lucide-react";
-import { ExplodedComponentVisual, FloatingMetalRings } from "@/components/industrial-3d";
+import { ExplodedComponentVisual, ProductMechanicalVisual, type ProductVisualVariant } from "@/components/industrial-visuals";
 import { Button, PageHero, Panel, Section } from "@/components/ui";
 import { productCategories, workshopMachines } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
@@ -13,13 +12,11 @@ export default function ProductsPage() {
       <PageHero eyebrow="Products / Capabilities" title="Custom components manufactured from buyer drawings, samples and specifications." intro="Product families span CNC machined parts, castings, sheet metal, gears, pulleys, ground shafts and brass non-return valve references for industrial sectors." image={<ExplodedComponentVisual />} />
 
       <Section title="Product matrix" intro="Use these categories to route your RFQ. Each family can be reviewed for material, quantity, tolerance, finish and delivery destination.">
-        <FloatingMetalRings className="mb-8" />
         <div className="grid gap-5 md:grid-cols-2">
           {productCategories.map((p) => (
             <article id={p.id} key={p.id} className="scroll-mt-28 overflow-hidden rounded-[2rem] border border-line bg-white shadow-metal">
-              <Image src={p.bandImage} alt={`${p.title} product examples`} width={900} height={260} className="h-44 w-full object-cover" />
-              <div className="grid gap-6 p-6 lg:grid-cols-[180px_1fr]">
-                <div className="relative h-40 overflow-hidden rounded-2xl bg-steel"><Image src={p.image} alt={`${p.title} detail example`} fill className="object-cover" /></div>
+              <div className="grid gap-6 p-6 lg:grid-cols-[220px_1fr]">
+                <ProductMechanicalVisual variant={p.visual as ProductVisualVariant} />
                 <div>
                   <p.icon className="mb-3 text-copper" />
                   <h2 className="font-display text-2xl font-semibold text-graphite">{p.title}</h2>

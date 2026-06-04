@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Download } from "lucide-react";
-import { FloatingMetalRings, MeasurementVisual } from "@/components/industrial-3d";
+import { MeasurementVisual } from "@/components/industrial-visuals";
 import { Button, PageHero, Panel, Section } from "@/components/ui";
 import { qualityPoints, qualityProcess, workshopMachines } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
@@ -13,7 +13,6 @@ export default function QualityInfrastructurePage(){
       <PageHero eyebrow="Quality / Infrastructure" title="Manufacturing depth supported by quality discipline." intro="Royal Engitech combines workshop, foundry, fabrication, CAD/CAM, inspection and dispatch practices to support precision engineered components." image={<MeasurementVisual />} />
 
       <Section title="Quality assurance sequence" intro="Quality is treated as a process that begins with drawing review and continues through material planning, manufacturing, inspection, packaging and dispatch.">
-        <FloatingMetalRings className="mb-8" />
         <div className="grid gap-5 lg:grid-cols-5">
           {qualityProcess.map((step, index)=>(
             <Panel key={step.title} className="relative overflow-hidden">
