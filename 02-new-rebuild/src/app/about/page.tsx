@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
 import { Reveal } from "@/components/motion";
+import { ExplodedComponentVisual, FloatingMetalRings } from "@/components/industrial-3d";
 import { Button, PageHero, Panel, Section, StatStrip } from "@/components/ui";
 import { capabilities, company, trustSignals } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
@@ -18,7 +19,7 @@ export default function AboutPage() {
         eyebrow="About Royal Engitech"
         title="A precision engineering company shaped by practical manufacturing experience."
         intro={`${company.name} was incorporated in ${company.founded} in Ahmedabad, Gujarat, India, and manufactures high-tech precision engineered components and assemblies for Indian and international buyers.`}
-        image={<Image src="/images/precision-components-line.jpg" alt="Precision machined components manufactured by Royal Engitech" width={560} height={300} className="rounded-[2rem] border border-line bg-white p-2 shadow-editorial" />}
+        image={<ExplodedComponentVisual />}
       />
 
       <Section title="What the company does" intro="Royal Engitech supports customer requirements for castings, forgings, high-precision machined components, sheet metal parts, gears, shafts, valves, tooling and fixtures.">
@@ -51,6 +52,7 @@ export default function AboutPage() {
 
       <Section title="Why buyers work with Royal Engitech" intro="A long operating history, in-house manufacturing depth and ISO quality focus make the company suitable for OEMs, exporters and industrial sourcing teams.">
         <StatStrip items={trustSignals} />
+        <FloatingMetalRings className="mt-8" />
         <div className="mt-10"><Button href="/contact">Discuss a requirement</Button></div>
       </Section>
     </>
