@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import { GlobeNetworkVisual } from "@/components/industrial-3d";
+import { GlobeNetworkVisual } from "@/components/industrial-visuals";
 import { Button, PageHero, Panel, Section } from "@/components/ui";
 import { company, exportReadiness, rfqSteps } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";

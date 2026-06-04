@@ -1,7 +1,6 @@
-import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
 import { Reveal } from "@/components/motion";
-import { ExplodedComponentVisual, FloatingMetalRings } from "@/components/industrial-3d";
+import { CapabilitySystemVisual, ExplodedComponentVisual } from "@/components/industrial-visuals";
 import { Button, PageHero, Panel, Section, StatStrip } from "@/components/ui";
 import { capabilities, company, trustSignals } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
@@ -24,7 +23,7 @@ export default function AboutPage() {
 
       <Section title="What the company does" intro="Royal Engitech supports customer requirements for castings, forgings, high-precision machined components, sheet metal parts, gears, shafts, valves, tooling and fixtures.">
         <div className="grid gap-10 lg:grid-cols-[.85fr_1.15fr] lg:items-center">
-          <Reveal><Image src="/images/cnc-equipment-line.jpg" alt="CNC and VMC machinery capability" width={900} height={520} className="rounded-[2rem] border border-line bg-white p-2 shadow-editorial" /></Reveal>
+          <Reveal><CapabilitySystemVisual /></Reveal>
           <Reveal delay={0.1}>
             <div className="prose prose-lg max-w-none text-smoke">
               <p>For buyers, the value is a coordinated manufacturing partner that can interpret drawings, plan production routes, build fixtures, machine critical geometry, inspect parts and prepare shipments with documentation and packaging discipline.</p>
@@ -52,7 +51,6 @@ export default function AboutPage() {
 
       <Section title="Why buyers work with Royal Engitech" intro="A long operating history, in-house manufacturing depth and ISO quality focus make the company suitable for OEMs, exporters and industrial sourcing teams.">
         <StatStrip items={trustSignals} />
-        <FloatingMetalRings className="mt-8" />
         <div className="mt-10"><Button href="/contact">Discuss a requirement</Button></div>
       </Section>
     </>

@@ -48,9 +48,9 @@ The following earlier paths remain present to prevent 404s and are mapped to rel
 - `/images/foundry-capability.jpg`
 - `/images/export-engineering.jpg`
 
-## 3D and motion visual strategy
+## Motion visual strategy
 
-The premium animated 3D-inspired visuals are generated with lightweight CSS, Tailwind and Framer Motion in `src/components/industrial-3d.tsx`. They do not rely on external stock renders, Spline scenes, WebGL textures or additional heavy 3D assets.
+The premium animated engineering visuals are generated with lightweight Tailwind and Framer Motion in `src/components/industrial-visuals.tsx`. They do not rely on external stock renders, Spline scenes, WebGL textures or additional heavy visual assets.
 
 ## Download assets
 

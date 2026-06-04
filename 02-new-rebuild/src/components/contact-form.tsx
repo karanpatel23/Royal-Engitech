@@ -47,7 +47,7 @@ export function ContactForm() {
     }
   }
 
-  const fieldClass = "mt-2 w-full rounded-xl border border-line bg-white px-4 py-3 text-graphite outline-none transition placeholder:text-smoke/55 focus:border-brass focus:ring-4 focus:ring-brass/15";
+  const fieldClass = "mt-2 w-full rounded-xl border border-line bg-white px-4 py-3 text-graphite outline-none transition focus:border-brass focus:ring-4 focus:ring-brass/15";
   const labelClass = "text-sm font-bold text-graphite";
   const errorText = (name: keyof ContactFormInput) => errors?.[name]?.[0] ? <span className="mt-1 block text-sm text-copper">{errors[name]?.[0]}</span> : null;
 
@@ -60,14 +60,14 @@ export function ContactForm() {
       </div>
       <div className="hidden" aria-hidden="true"><label>Website<input tabIndex={-1} autoComplete="off" value={form.website ?? ""} onChange={(event) => update("website", event.target.value)} /></label></div>
       <div className="grid gap-5 md:grid-cols-2">
-        <label className={labelClass}>Name *<input className={fieldClass} value={form.name} onChange={(event) => update("name", event.target.value)} placeholder="Your full name" />{errorText("name")}</label>
-        <label className={labelClass}>Company name *<input className={fieldClass} value={form.companyName} onChange={(event) => update("companyName", event.target.value)} placeholder="Company / organization" />{errorText("companyName")}</label>
-        <label className={labelClass}>Email *<input className={fieldClass} value={form.email} onChange={(event) => update("email", event.target.value)} placeholder="name@company.com" type="email" />{errorText("email")}</label>
-        <label className={labelClass}>Phone *<input className={fieldClass} value={form.phone} onChange={(event) => update("phone", event.target.value)} placeholder="Country code + number" />{errorText("phone")}</label>
-        <label className={labelClass}>Country *<input className={fieldClass} value={form.country} onChange={(event) => update("country", event.target.value)} placeholder="Country" />{errorText("country")}</label>
+        <label className={labelClass}>Name *<input className={fieldClass} value={form.name} onChange={(event) => update("name", event.target.value)} />{errorText("name")}</label>
+        <label className={labelClass}>Company name *<input className={fieldClass} value={form.companyName} onChange={(event) => update("companyName", event.target.value)} />{errorText("companyName")}</label>
+        <label className={labelClass}>Email *<input className={fieldClass} value={form.email} onChange={(event) => update("email", event.target.value)} type="email" />{errorText("email")}</label>
+        <label className={labelClass}>Phone *<input className={fieldClass} value={form.phone} onChange={(event) => update("phone", event.target.value)} />{errorText("phone")}</label>
+        <label className={labelClass}>Country *<input className={fieldClass} value={form.country} onChange={(event) => update("country", event.target.value)} />{errorText("country")}</label>
         <label className={labelClass}>Product / service interest *<select className={fieldClass} value={form.interest} onChange={(event) => update("interest", event.target.value)}><option value="">Select interest</option>{options.map((option)=><option value={option} key={option}>{option}</option>)}<option value="Custom precision component inquiry">Custom precision component inquiry</option></select>{errorText("interest")}</label>
       </div>
-      <label className={`${labelClass} mt-5 block`}>Message *<textarea className={`${fieldClass} min-h-40`} value={form.message} onChange={(event) => update("message", event.target.value)} placeholder="Example: part description, material, drawing availability, quantity, finish, inspection requirement and delivery destination." />{errorText("message")}</label>
+      <label className={`${labelClass} mt-5 block`}>Message *<textarea className={`${fieldClass} min-h-40`} value={form.message} onChange={(event) => update("message", event.target.value)} />{errorText("message")}</label>
       {status && <div className={`mt-5 rounded-2xl border p-4 text-sm ${status.ok ? "border-emerald-600/25 bg-emerald-50 text-emerald-800" : "border-copper/40 bg-orange-50 text-copper"}`}>{status.message}</div>}
       <button type="submit" disabled={isSubmitting} className="mt-6 inline-flex items-center justify-center rounded-full bg-graphite px-7 py-3 font-semibold text-white transition hover:bg-slateblue disabled:cursor-not-allowed disabled:opacity-70">
         {isSubmitting ? <Loader2 className="mr-2 animate-spin" size={18}/> : <Send className="mr-2" size={18}/>} Submit inquiry
