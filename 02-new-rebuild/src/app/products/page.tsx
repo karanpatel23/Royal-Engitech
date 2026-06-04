@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Download, FileText } from "lucide-react";
+import { ExplodedComponentVisual, FloatingMetalRings } from "@/components/industrial-3d";
 import { Button, PageHero, Panel, Section } from "@/components/ui";
 import { productCategories, workshopMachines } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
@@ -9,9 +10,10 @@ export const metadata = pageMetadata({ title: "Products & Capabilities", path: "
 export default function ProductsPage() {
   return (
     <>
-      <PageHero eyebrow="Products / Capabilities" title="Custom components manufactured from buyer drawings, samples and specifications." intro="Product families span CNC machined parts, castings, sheet metal, gears, pulleys, ground shafts and brass non-return valve references for industrial sectors." image={<Image src="/images/cast-components-line.jpg" alt="Machined and cast product families" width={560} height={300} className="rounded-[2rem] border border-line bg-white p-2 shadow-editorial" />} />
+      <PageHero eyebrow="Products / Capabilities" title="Custom components manufactured from buyer drawings, samples and specifications." intro="Product families span CNC machined parts, castings, sheet metal, gears, pulleys, ground shafts and brass non-return valve references for industrial sectors." image={<ExplodedComponentVisual />} />
 
       <Section title="Product matrix" intro="Use these categories to route your RFQ. Each family can be reviewed for material, quantity, tolerance, finish and delivery destination.">
+        <FloatingMetalRings className="mb-8" />
         <div className="grid gap-5 md:grid-cols-2">
           {productCategories.map((p) => (
             <article id={p.id} key={p.id} className="scroll-mt-28 overflow-hidden rounded-[2rem] border border-line bg-white shadow-metal">

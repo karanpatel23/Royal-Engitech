@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Download, FileCheck2 } from "lucide-react";
-import { HoverLift, Reveal } from "@/components/motion";
+import { Reveal } from "@/components/motion";
+import { FloatingMetalRings, GlobeNetworkVisual, HeroIndustrial3D } from "@/components/industrial-3d";
 import { Button, Panel, Section, StatStrip } from "@/components/ui";
 import { capabilities, company, exportReadiness, industries, productCategories, qualityProcess, trustSignals } from "@/lib/content";
 
@@ -18,23 +19,14 @@ export default function Home() {
             <div className="mt-9 flex flex-col gap-4 sm:flex-row"><Button href="/contact">Send RFQ <ArrowRight className="ml-2" size={18} /></Button><Button href="/products" variant="secondary">View capabilities</Button></div>
           </Reveal>
           <Reveal delay={0.12}>
-            <div className="relative">
-              <div className="absolute -right-5 -top-5 h-40 w-40 rounded-full border border-brass/30" />
-              <div className="overflow-hidden rounded-[2.5rem] border border-line bg-porcelain p-3 shadow-editorial">
-                <Image src="/images/hero-cnc-vmc.jpg" alt="Royal Engitech CNC machining facility" width={1100} height={620} priority className="h-[520px] w-full rounded-[2rem] object-cover" />
-              </div>
-              <div className="absolute -bottom-8 left-6 right-6 rounded-[1.5rem] border border-line bg-porcelain/95 p-5 shadow-metal backdrop-blur">
-                <div className="grid gap-4 sm:grid-cols-3">
-                  {trustSignals.slice(0, 3).map((item) => <div key={item.label}><p className="font-display text-2xl font-semibold text-graphite">{item.value}</p><p className="text-xs uppercase tracking-[0.18em] text-smoke">{item.label}</p></div>)}
-                </div>
-              </div>
-            </div>
+            <HeroIndustrial3D />
           </Reveal>
         </div>
       </section>
 
       <Section className="pt-24" eyebrow="Manufacturing credibility" title="Built around drawings, repeatability and export-ready dispatch." intro="The company combines machining, casting, fabrication, tooling and inspection support so sourcing teams can discuss complete component families—not just isolated operations.">
         <StatStrip items={trustSignals} />
+        <FloatingMetalRings className="mt-8" />
       </Section>
 
       <Section className="bg-porcelain" eyebrow="Capabilities" title="A connected shop-floor capability, presented as a production route." intro="From a casting or forging concept to a machined and packaged part, Royal Engitech supports the sequence needed by OEM and export buyers.">
@@ -92,7 +84,7 @@ export default function Home() {
 
       <Section className="bg-graphite text-white" eyebrow="Export confidence" title="A practical supplier profile for international sourcing teams." intro="Clear communication, documentation readiness and repeat-production focus help buyers evaluate Royal Engitech as a long-term engineering supplier.">
         <div className="grid gap-6 lg:grid-cols-[.9fr_1.1fr]">
-          <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-3"><Image src="/images/quality-measurement-systems.jpg" alt="Quality measurement systems for precision inspection" width={900} height={520} className="h-full min-h-80 rounded-[1.5rem] object-cover" /></div>
+          <GlobeNetworkVisual />
           <div className="grid gap-4 sm:grid-cols-2">
             {exportReadiness.map((item) => <Panel key={item.title} className="bg-white text-graphite"><item.icon className="mb-4 text-copper" /><h3 className="text-xl font-semibold">{item.title}</h3><p className="mt-3 text-smoke">{item.text}</p></Panel>)}
           </div>
