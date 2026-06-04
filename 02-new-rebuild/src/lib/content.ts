@@ -51,9 +51,8 @@ export const productCategories = [
     details: "Turning capacity up to 300 mm diameter, 900 mm length, and components up to 500 mm wide by 400 mm thick.",
     applications: ["Machine housings", "Precision flanges", "Bushes and sleeves", "Special turned parts"],
     materials: "Cast iron, mild steel, alloy steel, non-ferrous metals and forgings",
-    image: "/images/products/cnc-turned-parts.jpg",
-    bandImage: "/images/precision-components-line.jpg",
     icon: Settings,
+    visual: "cnc",
   },
   {
     id: "aluminum-parts",
@@ -62,9 +61,8 @@ export const productCategories = [
     details: "Pressure die casting capacity up to 3.000 kgs with die-making, casting and post-casting machining support.",
     applications: ["Aluminum machine parts", "Equipment brackets", "ATC replacement parts", "Lightweight housings"],
     materials: "Aluminum castings and machined aluminum alloys",
-    image: "/images/products/aluminum-parts.jpg",
-    bandImage: "/images/aluminum-components-line.jpg",
     icon: Factory,
+    visual: "aluminum",
   },
   {
     id: "non-ferrous-castings",
@@ -73,9 +71,8 @@ export const productCategories = [
     details: "In-house pattern support and CNC machining help reduce machining tolerance, time and cost while matching customer drawings.",
     applications: ["Bronze components", "Non-ferrous bushings", "Precision rings", "Custom machined castings"],
     materials: "Non-ferrous casting grades per drawing and buyer requirement",
-    image: "/images/products/non-ferrous-castings.jpg",
-    bandImage: "/images/non-ferrous-components-line.jpg",
     icon: Gauge,
+    visual: "nonFerrous",
   },
   {
     id: "cast-iron-castings",
@@ -84,9 +81,8 @@ export const productCategories = [
     details: "Foundry and machine-shop coordination supports accurate cast iron components and finished assemblies.",
     applications: ["Pump and valve castings", "Machine bases", "Housings", "Industrial brackets"],
     materials: "Cast iron and ferrous casting grades per application",
-    image: "/images/products/cast-iron-castings.jpg",
-    bandImage: "/images/cast-components-line.jpg",
     icon: Cog,
+    visual: "castIron",
   },
   {
     id: "sheet-metal-parts",
@@ -95,9 +91,8 @@ export const productCategories = [
     details: "CNC laser cutting capacity of 1500 x 3000 x 12 mm and bending capacity of 3000 x 8 mm thickness.",
     applications: ["Fabricated structures", "Enclosures", "Pressed components", "Welded industrial assemblies"],
     materials: "Sheet metal grades selected by drawing, finish and duty cycle",
-    image: "/images/products/sheet-metal-parts.jpg",
-    bandImage: "/images/sheet-metal-components-line.jpg",
     icon: PackageCheck,
+    visual: "sheetMetal",
   },
   {
     id: "gears-pulleys",
@@ -106,9 +101,8 @@ export const productCategories = [
     details: "Gear manufacturing up to 6 module or as per customer requirement.",
     applications: ["Gear boxes", "Textile drives", "Timing assemblies", "Power transmission systems"],
     materials: "Steel, alloy steel and buyer-specified transmission materials",
-    image: "/images/products/gears-timing-pulleys.jpg",
-    bandImage: "/images/gears-pulleys-line.jpg",
     icon: Wrench,
+    visual: "gears",
   },
   {
     id: "ground-shafts",
@@ -117,9 +111,8 @@ export const productCategories = [
     details: "Diameter up to 100 mm and length up to 6000 mm.",
     applications: ["Linear motion", "Transmission shafts", "Machine spindles", "Long precision rods"],
     materials: "Steel and alloy grades selected by drawing and application",
-    image: "/images/products/ground-shafts.jpg",
-    bandImage: "/images/industrial-components.jpg",
     icon: Gauge,
+    visual: "shafts",
   },
   {
     id: "brass-nrv",
@@ -128,9 +121,8 @@ export const productCategories = [
     details: "Manufactured with high-grade materials to support reliable resistance in demanding operating conditions.",
     applications: ["Liquid systems", "Pump lines", "Valve assemblies", "Industrial flow control"],
     materials: "Brass and valve-grade components",
-    image: "/images/products/brass-nrv.jpg",
-    bandImage: "/images/products/brass-nrv.jpg",
     icon: Droplets,
+    visual: "brassValve",
   },
 ];
 
